@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectNewTabTest</title>
+    <link rel="stylesheet" href="./project.css">
+    <script src="./project.js"></script>
+</head>
+<header>
+    <h3 class="TitleProject">Controle financeiro</h3>
+    <div class="headerDivStyle">
+        <input class="headerButtonSize" type="button" value="Limpar dados" style="border:none" />
+        <input class="headerButtonSize" type="button" value="Cadastro de transações" />
+    </div>
+</header>
+
+<body>
+    <div class="bodyMainDivStyle">
+        <div class="newTransitionDivStyle">
+            <h4 class="transitionTitleStyle">Nova transação</h4>
+            <div class="inputAndLabelBoxStyle">
+               <!--  <form> -->
+                    <label for="transationType"> Tipo de transação</label>
+                    <select class="selectCampStyle" id="transationType" name="transationType">
+                        <option>Compra</option>
+                        <option>Venda</option>
+                    </select>
+                    <label for="merchandiseName">Nome da mercadoria</label>
+                    <input class="inputCampStyle" type="text" id="merchandiseName" name="merchandiseName">
+                    <label for="">Valor</label>
+                    <input class="inputCampStyle" type="number" id="merchandiseValue" name="merchandiseValue"
+                        placeholder="R$ 0,00">
+                    <input class="submitCampStyle" type="submit" placeholder="Enviar valor">
+                    <!--  <input t
+                 
+                   ype="text" id="transationType" name="transationType"> -->  
+               <!--   </form> -->
+            </div>
+
+        </div>
+        <div class="extractTransitionDivStyle">
+
+        </div>
+    </div>
+</body>
+
+</html>
