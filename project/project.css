@@ -14,24 +14,45 @@ header{
     justify-content: center;
     justify-content: space-around;
     width:100%;
-    
 }
+@media screen and (max-width: 1000px) {
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-content:space-evenly;
+    }
+  }
 .headerDivStyle{
-   /*  background-color: red; */
+
     width: 30%;
     display:flex;
     align-items: center;
+    justify-content: space-between;
 }
+@media screen and (max-width: 1000px) {
+    .headerDivStyle{
+        width: 75%;
+
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+  }
+
+
 .headerButtonSize{
    /*  background-color:yellowgreen; */
-    width: 100%;
+    width: 49.5%;
     height: 60%;
-    border-top: none;
-    border-right: none;
-    border-bottom: none;
-    border-color: gainsboro;
-    background-color: white;
+    border-color:gainsboro;
 }
+@media screen and (max-width: 1000px) {
+    .headerButtonSize{
+        width: 28%;
+       
+    }
+  }
 body{
    /*  background-color: red; */
    margin: 0px;
@@ -42,13 +63,23 @@ body{
     
 }
 .bodyMainDivStyle{
-   /* background-color: red;  */
+   background-color: yellow; 
    /*  border:solid 1px; */
     width: 75%;
     height: 80%;
     margin-top: 2%;
     margin-left: 12.5%;
+    display: flex;
+    flex-direction: row;
 }
+@media screen and (max-width: 1000px) {
+    .bodyMainDivStyle{
+        width: 98%;
+        margin-left:1%;
+       
+    }
+  }
+
 .newTransitionDivStyle{
     width: 35%;
     height: 60%;
@@ -56,8 +87,14 @@ body{
     border-color: silver;
     display: flex;
     flex-direction: column;
-    
+    background-color: green;
 }
+@media screen and (max-width: 1000px) {
+    .newTransitionDivStyle{
+        height: 40%;
+        width: 40%;
+    }
+  }
 .transitionTitleStyle{
     text-align: center;
     /* background-color: red; */
@@ -94,3 +131,46 @@ body{
     height: 10%;
 
 }
+.extractTransitionDivStyle{
+ 
+    width: 65%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    
+}
+@media screen and (max-width: 1000px) {
+    .extractTransitionDivStyle{
+        width: 60%;
+    }
+  }
+
+.extractTansitionTitleStyle{
+    text-align: center;
+    background-color: yellow; 
+    margin-top: 1%;
+}
+.extractTransitionTableStyle{
+ 
+    height: 100%;
+    width: 95%;
+}
+.tableRowStyle{
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    width: 100%;
+    border-bottom: solid 1px;
+}
+.tableRowTotalStyle{
+    display: flex;
+    justify-content: space-between;
+    border-top: solid 1px;
+    margin-top: 5px;
+    width: 100%;
+ 
+    
+}
+
+
