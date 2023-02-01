@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectNewTabTest</title>
-    <link rel="stylesheet" href="./project.css" >
+    <link rel="stylesheet" href="./project.css">
     <script src="./project.js"></script>
 </head>
 <header>
@@ -15,9 +15,24 @@
         <input class="headerButtonSize" type="button" value="Limpar dados" />
         <input class="headerButtonSize" type="button" value="Cadastro de transações" />
     </div>
+    <div class="mainDivResponsiveStyle">
+        <input type="checkbox" id="inputCheck">
+        <label for="inputCheck" class="labelImageStyle">
+            <img class="menuImage" src="./src/pngMenu.png" />
+        </label>
+        <nav class="navResponsiveStyle">
+            <ul class="listStyle">
+                <li><a class="linkStyle" href="">Cadastro de transações</a></li>
+                <li><a class="linkStyle" href="">Limpar dados</a></li>
+                <a class="closeButtonStyle" href="">Fechar side bar</a>
+            </ul>
+        </nav>
+    </div>
+
 </header>
 
 <body>
+    <!-- Div pai, comporta todos os dados e os organiza dentro do body -->
     <div class="bodyMainDivStyle">
         <div class="newTransitionDivStyle">
             <h4 class="transitionTitleStyle">Nova transação</h4>
@@ -35,7 +50,6 @@
                 <input class="inputCampStyle" type="number" id="merchandiseValue" name="merchandiseValue"
                     placeholder="R$ 0,00">
                 <input class="submitCampStyle" type="submit" placeholder="Enviar valor">
-                <!--  <input type="text" id="transationType" name="transationType"> -->
             </form>
         </div>
         <div class="extractTransitionDivStyle">
@@ -61,6 +75,7 @@
                     <td> Total </td>
                     <td>R$12,909,99</td>
                 </tr>
+
             </table>
         </div>
     </div>
