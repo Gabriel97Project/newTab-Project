@@ -8,7 +8,41 @@ html{
 
     
 }
-
+body{
+    /*  background-color: red; */
+    margin: 0px;
+    width:100%;
+    height: 100%;
+    
+    background-color: blue;
+    overflow-x: hidden;
+     
+ }
+ .bodyMainDivStyle{
+   /*  background-color: yellow;  */
+    /*  border:solid 1px; */
+     width: 75%;
+     height: 80%;
+     margin-top: 2%;
+     margin-left: 12.5%;
+     display: flex;
+     flex-direction: row;
+     
+ 
+ }
+ @media screen and (max-width: 1000px) {
+     .bodyMainDivStyle{
+         width: 98%;
+         margin-left:1%;
+     }
+ }
+ @media screen and (max-width: 768px) {
+     .bodyMainDivStyle{
+        display: flex;
+        flex-direction: column;
+     }
+ }
+ 
 header{
     background-color: gainsboro;
     display: flex;
@@ -60,40 +94,6 @@ header{
        
     }
   }
-body{
-   /*  background-color: red; */
-   margin: 0px;
-   width:100%;
-   height: 100%;
-   
-   background-color: blue;
-    
-}
-.bodyMainDivStyle{
-  /*  background-color: yellow;  */
-   /*  border:solid 1px; */
-    width: 75%;
-    height: 80%;
-    margin-top: 2%;
-    margin-left: 12.5%;
-    display: flex;
-    flex-direction: row;
-    
-
-}
-@media screen and (max-width: 1000px) {
-    .bodyMainDivStyle{
-        width: 98%;
-        margin-left:1%;
-    }
-}
-@media screen and (max-width: 768px) {
-    .bodyMainDivStyle{
-       display: flex;
-       flex-direction: column;
-    }
-}
-
 .newTransitionDivStyle{
     width: 35%;
     height: 300px;
@@ -324,9 +324,9 @@ body{
 }
 
 
-    .mainDivResponsiveStyle{
-        display: none;
-    }
+.mainDivResponsiveStyle{
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
     .mainDivResponsiveStyle{
@@ -365,13 +365,13 @@ body{
     height: 500px;
     position: absolute; 
     transition: all 0.5s;
-    right: -350px;
-    width: 350px;
+    /* right: -350px; */
+    width: 0;
    
 }
 #inputCheck:checked ~ .navResponsiveStyle
 {
-    transform: translateX(-350px);
+    width: 350px;
    
 
 }
