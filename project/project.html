@@ -36,20 +36,29 @@
     <div class="bodyMainDivStyle">
         <div class="newTransitionDivStyle">
             <h4 class="transitionTitleStyle">Nova transação</h4>
-            <form class="inputAndLabelBoxStyle">
-                <label for="transationType"> Tipo de transação</label>
-                <select class="selectCampStyle" id="transationType" name="transationType">
-                    <option>O que você deseja?</option>
-                    <option>Compra</option>
-                    <option>Venda</option>
-                </select>
-                <label for="merchandiseName">Nome da mercadoria</label>
-                <input class="inputCampStyle" type="text" id="merchandiseName" name="merchandiseName"
-                    placeholder="Qual sua mercadoria?">
-                <label for="">Valor</label>
-                <input class="inputCampStyle" type="number" id="merchandiseValue" name="merchandiseValue"
-                    placeholder="R$ 0,00">
-                <input class="submitCampStyle" type="submit" placeholder="Enviar valor">
+            <form class="formBoxStyle">
+                <div id="inputBreakPartStyle">
+                    <div class="labelAndInputBoxStyle">
+                        <label for="transationType"> Tipo de transação</label>
+                        <select class="selectCampStyle" id="transationType" name="transationType">
+                            <option>O que você deseja?</option>
+                            <option>Compra</option>
+                            <option>Venda</option>
+                        </select>
+                    </div>
+                    <div class="labelAndInputBoxStyle">
+                        <label for="merchandiseName">Nome da mercadoria</label>
+                        <input id="inputMerchandiseNameStyle" type="text" id="merchandiseName" name="merchandiseName" placeholder="Qual sua mercadoria?">
+                    </div>
+                    <div class="labelAndInputBoxStyle">
+                        <label for="">Valor</label>
+                        <input id="inputMerchandiseValueStyle" type="number" id="merchandiseValue" name="merchandiseValue" placeholder="R$ 0,00">
+                    </div>
+
+                </div>
+                <div id="inputSubmitStyle">
+                    <input class="submitCampStyle" type="submit" placeholder="Enviar valor">
+                </div>
             </form>
         </div>
         <div class="extractTransitionDivStyle">
