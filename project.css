@@ -184,26 +184,21 @@ header{
     position: absolute;
     top: 25px;
     right: 10px;
-    z-index: 1; 
+   /*  z-index: 1;  */
 }
-
-/* Abaixo temos um condição que vai funcionar para abrir nossa side bar em dispositivos
-como tablet e mobile. Essa condição é ativado de acordo com o estado do checkbox, se ele
-estiver marcado a side bar vai ser mostrada, se estiver desmarcado a side bar vai estar 
-com width 0px  */
-
-#inputCheck:checked ~ .labelImageStyle
-{
-    top: 20px;
-    right: 190px;
-}
-#inputCheck:checked ~ .navResponsiveStyle
-{
-    width: 252px;
+.labelCloseImageStyle{
+    position: relative;
+    top: 55px;
+    left: 20px;
+    /*  z-index: 1;  */
+    
 }
 
 .menuImage{
     width: 30px;
+}
+.closeMenuImage{
+    width: 15px;
 }
 
 .navResponsiveStyle{
@@ -216,6 +211,26 @@ com width 0px  */
 #inputCheck{
      display: none; 
 }
+
+/* Abaixo temos um condição que vai funcionar para abrir nossa side bar em dispositivos
+como tablet e mobile. Essa condição é ativado de acordo com o estado do checkbox, se ele
+estiver marcado a side bar vai ser mostrada, se estiver desmarcado a side bar vai estar 
+com width 0px  */
+
+#inputCheck:checked ~ .navResponsiveStyle
+{
+    width: 252px;
+}
+#inputCheck:checked ~ .labelImageStyle
+{
+    display: none;
+}
+ #inputCheck:checked ~ .labelCloseImageStyle
+{
+    top: 20px;
+    right: 110px;
+    width: 30px;
+} 
 .listStyle{
     list-style: none;
     padding: 0px;
