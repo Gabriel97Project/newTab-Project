@@ -1,68 +1,78 @@
 *{
     font-family: 'Lato', sans-serif;
 }
-html{
-    width: 100vw;
-}
 
 body{
     margin: 0px;
     width:100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+ }
+ #bodyMainDivWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
  }
 
 .bodyMainDivStyle{
-    width: 75%;
-    height: 80%;
-    margin-top: 2%;
-    margin-left: 12.5%;
+    width: 100%;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    max-width: 1112px;
+}
+
+#headerWrapper{
+    background-color: #E0E0E0;
+    width:100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-header{
-    background-color: gainsboro;
+#headerBox{
+    background-color: #E0E0E0;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    justify-content:space-around;
     align-items: center;
+    justify-content: center;
     width:100%;
-    height: 80px;
+    height: 60px;
+    max-width: 1112px;
 }
 
 #headerMainDiv{
-    width: 75%;
+    width: 100%;
+    height: 60px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
-.headerDivStyle{
-    width: 36%;
-    display:flex;
+.TitleProject{
+    font-size: 20px;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    width: 100%;
+    margin-left: 10px;
 }
 
 #logoAndTitleStyle{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    width: 200px;
+    justify-content:center;
+    width: 100%;
 }
 
 #logoImageStyle{
-    width: 40px;
-    height: 40px;
-}
-
-.headerButtonSize{
-    width: 49.5%;
-    height: 40px;
-    border-color:gainsboro;
+    width: 30px;
+    height: 27px;
 }
 
 .newTransitionDivStyle{
@@ -72,15 +82,16 @@ header{
     border-color: silver;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .transitionTitleStyle{
     text-align: center;
-    height: 12%;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 5x;
 }
 
 .formBoxStyle{
@@ -88,8 +99,7 @@ header{
     flex-direction: column;
     justify-content: space-between;
     width:95%;
-    height: 70%;
-    margin-left: 2.5%;
+    height: 250px;
 }
 
 .labelAndInputBoxStyle{
@@ -105,6 +115,7 @@ header{
     border: 1px solid;
     border-color: gray;
     border-radius: 4px;
+    color: #888888;
 }
 
 #inputMerchandiseNameStyle{
@@ -112,6 +123,7 @@ header{
     border: 1px solid;
     border-color: gray;
     border-radius: 4px;
+    color: #888888;
 }
 
 #inputMerchandiseValueStyle{
@@ -119,6 +131,7 @@ header{
     border: 1px solid;
     border-color: gray;
     border-radius: 4px;
+    color: #888888;
 }
 
 #inputSubmitStyle{
@@ -128,7 +141,7 @@ header{
 }
 
 .submitCampStyle{
-    background-color: black; 
+    background-color: #333333; 
     
     border-radius: 3px;
     color: white;
@@ -138,15 +151,18 @@ header{
 
 .extractTransitionDivStyle{
     width: 64.5%;
-    margin-left: 0.5%;
+    height: 300px;
+    margin-left: 5px;
+    margin-top: 20px;
     display:flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
 .extractTansitionTitleStyle{
     text-align: center;
-    margin-top: 1%;
+    margin-top: 10px;
 }
 
 .extractTransitionTableStyle{
@@ -177,84 +193,59 @@ header{
 }
 
 .mainDivResponsiveStyle{
-    display: none;
-}
-
-.labelImageStyle{
-    position: absolute;
-    top: 25px;
-    right: 10px;
-   /*  z-index: 1;  */
-}
-.labelCloseImageStyle{
     position: relative;
-    top: 55px;
-    left: 20px;
-    /*  z-index: 1;  */
-    
+    display: flex;
+    flex-direction: row;
+    height: 60px;
 }
 
 .menuImage{
-    width: 30px;
+    width: 0px;
 }
 .closeMenuImage{
-    width: 15px;
+    width: 0px;
 }
 
 .navResponsiveStyle{
-    background-color: rgba(61, 58, 59, 1);
-    height: 100%;
+    height: 60px;
     overflow-y: hidden;
-    width: 0px;  
-}
+    width: 350px;  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} 
 
 #inputCheck{
      display: none; 
 }
 
-/* Abaixo temos um condição que vai funcionar para abrir nossa side bar em dispositivos
-como tablet e mobile. Essa condição é ativado de acordo com o estado do checkbox, se ele
-estiver marcado a side bar vai ser mostrada, se estiver desmarcado a side bar vai estar 
-com width 0px  */
-
-#inputCheck:checked ~ .navResponsiveStyle
-{
-    width: 252px;
-}
-#inputCheck:checked ~ .labelImageStyle
-{
-    display: none;
-}
- #inputCheck:checked ~ .labelCloseImageStyle
-{
-    top: 20px;
-    right: 110px;
-    width: 30px;
-} 
 .listStyle{
     list-style: none;
     padding: 0px;
-    width: 100%;
-    display: block;
-    margin-top:100px ;
+    width:100%;
+    height: 40px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
 }
 
-.linkStyle{
+ .linkStyle{
     text-decoration: none;
     color: white;
     display: flex;
-    flex-direction: column;
-    align-items: end;
-    padding: 20px 5px;
-}
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    color: #333333; 
+} 
 
 .linkStyle:hover{
-    background-color: gainsboro; 
-    color: black;
+    cursor: pointer;
+
 }
-
-
-
 
 
 /* Responsividade do projeto abaixo */
@@ -262,37 +253,23 @@ com width 0px  */
 /* Estilo para tablet landscape ou laptop */
 
 @media screen and (max-width: 1112px) {
-    
     .bodyMainDivStyle{
-        width: 98%;
+        width: 95.5%;
         height: 100%;
-        margin-left:1%;
+        margin: 22px;
     }
-    header{
-        display: flex;
-        flex-direction: row;
-        justify-content:space-evenly;
-    }
+
     #headerMainDiv{
-        width: 97%;
-        margin-left:1%;
+        width: 100%;
+        margin: 22px;
     }
-    .headerDivStyle{
-        width: 66%;
-        display:flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-    #logoAndTitleStyle{
-        width:180;
-    }
-    .headerButtonSize{
-        width: 30%;    
+
+    .listStyle{
+        width: 350px;
     }
     .newTransitionDivStyle{
         height: 344px;
-        width: 500px;
-        margin-left: 1%;  
+        width: 50%;
     }
     .extractTransitionDivStyle{
         width: 100%;
@@ -309,29 +286,41 @@ com width 0px  */
     .bodyMainDivStyle{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        margin:22px;
+        height: 600px;
+    
+        padding: 0px;
+       
     }
     #headerMainDiv{
-        width: 97%;
+        width: 100%;
     }
-    .headerDivStyle{
-        display: none;
+
+    .TitleProject{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: none;
     }
+
     #logoAndTitleStyle{
-        width:60%;
+        width:100%;
     }
     .newTransitionDivStyle{
-        width: 98%;
-        margin-left: 1%;
-        height: 180px;
-        display: flex;
+        width: 99.5%;
+        height: 250px;
+
     }
     .formBoxStyle{
         display: flex;
+        width: 95%;
         align-items: center;
         justify-content: center;
-        margin-bottom: 2%;
-   }
-   #inputBreakPartStyle{
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    #inputBreakPartStyle{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -362,17 +351,105 @@ com width 0px  */
     }
     .extractTransitionDivStyle{
         width: 100%;
-        margin-top: 5%;
+        margin-top: 40px;
         margin-left: 0%; 
     }
     .mainDivResponsiveStyle{
-        display: flex;
-        flex-direction: column;
         position: absolute;
         height: 100%;
         top: 0px;
-        right: 0px;
+        right: 0px; 
     }
+    
+    .labelImageStyle{
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .labelCloseImageStyle{
+        position:relative;
+        top: 35px;
+        left: 20px;  
+        width: 0px;
+    }
+
+    .menuImage{
+        width: 30px;
+    }
+
+    .menuImage:hover{
+        cursor: pointer;
+    }
+
+    .closeMenuImage{
+       width: 15px;
+    }
+
+    .closeMenuImage:hover{
+        cursor: pointer;
+    }
+
+    .navResponsiveStyle{
+        background-color: #333333; 
+        height: 100%;
+        width: 0px;  
+        display: flex;
+        align-items: flex-start;
+        overflow-x: hidden;
+    }
+
+    .listStyle{
+        list-style: none;
+        padding: 0px;
+        width: 100%;
+        display: block;
+        margin-top:100px ;
+        background-color: transparent; 
+        height: 100px;
+
+    }
+
+    .linkBar{
+        display: none;
+    }
+
+    .linkStyle{
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .linkStyle:hover{
+        background-color:#C4C4C4; 
+        color: black;
+    }
+
+    /* Abaixo temos um condição que vai funcionar para abrir nossa side bar em dispositivos
+    como tablet e mobile. Essa condição é ativado de acordo com o estado do checkbox, se ele
+    estiver marcado a side bar vai ser mostrada, se estiver desmarcado a side bar vai estar 
+    com width 0px  */
+
+    #inputCheck:checked ~ .navResponsiveStyle
+    {
+        width: 252px;
+    }
+    #inputCheck:checked ~ .labelImageStyle
+    {
+        display: none;
+    }
+     #inputCheck:checked ~ .labelCloseImageStyle
+    {
+        top: 20px;
+        right: 110px;
+        width: 30px;
+    } 
+  
 }
 
 /* Estilo de responsividade entre o tablet e mobile */
@@ -382,7 +459,7 @@ com width 0px  */
         height: 300px;
     }
     .formBoxStyle{
-        margin-bottom: 5%;
+        margin-bottom: 20px;
     }
     #inputBreakPartStyle{
         display: flex;
@@ -409,6 +486,11 @@ com width 0px  */
 /* Estilo de responsividade para mobile */
 
 @media screen and (max-width: 480px) {
+    .TitleProject{
+        
+        padding-right: 30px;
+       
+    }
     .newTransitionDivStyle{
         width: 371;
         height: 290px;
@@ -457,18 +539,10 @@ com width 0px  */
     .tableRowTotalStyle{
         width: 95%;   
     }
-    #inputCheck:checked ~ .labelImageStyle{
-        right: 300px;
-    }
-    #inputCheck:checked ~ .navResponsiveStyle{
+
+    #inputCheck:checked ~ .navResponsiveStyle
+    {
         width: 351px;
     }
     
-
-
-
-
-
-
-
 }
