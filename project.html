@@ -48,53 +48,47 @@
         <div class="bodyMainDivStyle">
             <div class="newTransitionDivStyle">
                 <h4 class="transitionTitleStyle">Nova transação</h4>
-                <form class="formBoxStyle">
+                <form class="formBoxStyle" onsubmit="myFormValues(event); /*  return false */ ">
+                    <!-- return false para a função ou execução de algo -->
+                    <!-- toda função de açao tipo clicar, mover e etc, recebe um event como 
+                    parametro -->
                     <div id="inputBreakPartStyle">
                         <div class="labelAndInputBoxStyle">
                             <label for="transationType"> Tipo de transação</label>
-                            <select class="selectCampStyle" id="transationType" name="transationType">
-                                <option>O que você deseja?</option>
-                                <option>Compra</option>
-                                <option>Venda</option>
+                            <select id="selectCampStyle" id="transationType" name="transationType">
+                                <option value="null">O que você deseja?</option>
+                                <option value="+">Compra</option>
+                                <option value="-">Venda</option>
                             </select>
                         </div>
                         <div class="labelAndInputBoxStyle">
-                            <label for="inputMerchandiseNameStyle">Nome da mercadoria</label>
-                            <input id="inputMerchandiseNameStyle" type="text" name="merchandiseName" placeholder="Qual sua mercadoria?">
+                            <label for="inputMerchandiseNameStyle"  type="text" >Nome da mercadoria</label>
+                            <input id="inputMerchandiseNameStyle" required type="text" name="merchandiseName" placeholder="Qual sua mercadoria?">
                         </div>
                         <div class="labelAndInputBoxStyle">
                             <label for="inputMerchandiseValueStyle">Valor</label>
-                            <input id="inputMerchandiseValueStyle" type="text" id="merchandiseValue" name="merchandiseValue" placeholder="R$ 0,00">
+                            <input id="inputMerchandiseValueStyle" required type="text" id="merchandiseValue" name="merchandiseValue" placeholder="R$ 0,00">
                         </div>
                     </div>
                     <div id="inputSubmitStyle">
-                        <input class="submitCampStyle" type="submit" placeholder="Enviar valor">
+                        <button class="submitCampStyle" type="submit">Enviar valor</button>
                     </div>
                 </form>
             </div>
             <div class="extractTransitionDivStyle">
                 <h4 class="extractTansitionTitleStyle">Extrato de transações</h4>
-                <table class="extractTransitionTableStyle">
-                    <tr class="tableRowStyle">
+                <table id="extractTransitionTableStyle">
+                    <tr id="tableRowStyle" style="background-color: blue;">
                         <th>Mercadoria</th>
                         <th>Valor</th>
+                        <tbody id="tableBodyStyle" style="background-color: chartreuse;">
+                            
+                        </tbody>
+                        <tr class="tableRowTotalStyle">
+                            <td> Total </td>
+                        </tr>
                     </tr>
-                    <tr class="tableRowStyle">
-                        <td> + Lorem ipsum dolor sit amet <br /> consectetur</td>
-                        <td>R$ 12,999,99</td>
-                    </tr>
-                    <tr class="tableRowStyle">
-                        <td> - Quis nostrud exercitation</td>
-                        <td>R$ 99,99</td>
-                    </tr>
-                    <tr class="tableRowStyle">
-                        <td> + Lorem ipsum </td>
-                        <td>R$ 9,99</td>
-                    </tr>
-                    <tr class="tableRowTotalStyle">
-                        <td> Total </td>
-                        <td>R$12,909,99</td>
-                    </tr>
+                   
                 </table>
             </div>
         </div>

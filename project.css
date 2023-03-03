@@ -109,7 +109,7 @@ body{
    align-items: space-between;
 }
 
-.selectCampStyle{
+#selectCampStyle{
     height: 35px;
     margin: 0px;
     border: 1px solid;
@@ -165,21 +165,38 @@ body{
     margin-top: 10px;
 }
 
-.extractTransitionTableStyle{
+#extractTransitionTableStyle{
     width: 98%;
     height: 100%;
 }
 
-.tableRowStyle{
+#tableRowStyle{
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
     width: 97.5%;
-    border-bottom: solid 1px; 
-    border-color: gray;
+/*     border-bottom: solid 1px; 
+    border-color: gray; */
     padding-top: 10px;
 }
+tr{
+    border-bottom: solid 1px; 
+   
+}
+
+#tableBodyStyle{
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 97.5%;
+    height: 200px;
+    overflow-y: scroll;
+    
+}
+
 
 .tableRowTotalStyle{
     display: flex;
@@ -274,7 +291,7 @@ body{
     .extractTransitionDivStyle{
         width: 100%;
     }
-    .extractTransitionTableStyle{
+    #extractTransitionTableStyle{
         width: 98%;  
     }
     
@@ -469,7 +486,7 @@ body{
     .labelAndInputBoxStyle{
         width: 100%; 
     }
-    .selectCampStyle{
+    #selectCampStyle{
         width: 99%;
     }
     #inputMerchandiseNameStyle{
@@ -517,7 +534,7 @@ body{
         justify-content: space-around;
         margin-top: 0px;
     }
-    .selectCampStyle{
+    #selectCampStyle{
         width: 100%;
     }
     #inputMerchandiseNameStyle{
@@ -529,11 +546,11 @@ body{
         margin-top: 5%;
         justify-content: flex-end;
     }
-    .extractTransitionTableStyle{
+    #extractTransitionTableStyle{
         height: 200px;
         
     }
-    .tableRowStyle{
+    #tableRowStyle{
         width: 95%;   
     }
     .tableRowTotalStyle{
