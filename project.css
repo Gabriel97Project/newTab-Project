@@ -242,6 +242,7 @@ th{
     display: flex;
     justify-content: space-between;
     border-top: solid 1px;
+    
     border-color: gray;
     margin-top: 5px;
     padding-left: 10px;
