@@ -8,9 +8,11 @@ if (dadosDoLocalStorageVazio != null) {
 
 var valueArray = [];
 /* let valueArrayLastNumber = valueArray.splice(-1) */
-let result = 0 ;
+
+let result = 0;
 
 
+//*****************************************
 /* a ARRAY DEVE ESTAR FORA DA FUNÇÃO PARA ARMAZENAR OS DADOS TODA VEZ QUE
 A FUNÇÃO FOR CHAMADA, SE COLOCAR O ARRAY DENTRO DA FUNÇÃO, OS VALORES NÃO SERÃO
 SALVOS, ELES SERÃO ATUALIZADOS AO INVES DE SALVAR */
@@ -63,6 +65,43 @@ function myFormValues(e) {
     //document.getElementById('extractTransitionTableStyle').appendChild(trCreate);
     document.getElementById('tableBodyStyle').appendChild(trCreate);
     console.log(seleçãoCompraOuVenda);
+
+    /*  var resultDataRefresh = result; */
+    /*  function ResultElementCreate () { */
+    // var finalResultCreate = document.createElement('p');
+    // /*  var totalValueCreat = finalResult.appendChild(document.createElement('p'));  */
+    // finalResultCreate.innerHTML = result;
+
+    // document.getElementById('tableRowTotalStyle').appendChild(finalResultCreate);
+    // finalResultCreate.className = "finalResult";
+    let finalResultCreate; //variavel vazio vai ser preenchida qndo for criado o novo elemento
+    var getingResultId = document.getElementById('finalResult');
+    // }/* 
+
+    /* const currentResult = result */
+
+    /* if (result) {
+       return [resultRefresh.length -1]; */
+
+    if (!getingResultId) {
+        finalResultCreate = document.createElement('p');
+        /*  var totalValueCreat = finalResult.appendChild(document.createElement('p'));  */
+        document.getElementById('tableRowTotalStyle').appendChild(finalResultCreate);
+        finalResultCreate.className = "finalResult";
+        finalResultIdCreate = document.getElementsByClassName("finalResult")[0].setAttribute("id", "finalResult");
+
+        // }/* 
+    }
+
+    let valueArrayLastNumber = valueArray[valueArray.length - 1];
+    /* if(valueArrayLastNumber.length < 0){
+        document.getElementById('finalResult').innerHTML = valueArrayLastNumber;
+    }if(seleçãoCompraOuVenda == "+"){
+        document.getElementById('finalResult').innerHTML = result + parseInt(valueArrayLastNumber);
+    }
+    if(seleçãoCompraOuVenda == "-"){
+        document.getElementById('finalResult').innerHTML = result - parseInt(valueArrayLastNumber);
+    } */
     /* let result = 0; */
 
     /* resultNegative = valorDaMercadoria - parseInt(valueArray[i]); */
@@ -74,31 +113,56 @@ function myFormValues(e) {
     /* l et resultPositive = 0; */
     /*  console.log('valor foi somado', seleçãoCompraOuVenda) */
     /*  console.log(somaDeValores) */
-    
-   /*  for (let i = 0; i < valueArray.length; i++) { */
+
+    /*  for (let i = 0; i < valueArray.length; i++) { */
     //let valueArrayLastNumber = valueArray[valueArray.length - 1]; 
-    let valueArrayLastNumber = valueArray[ valueArray.length - 1 ]; 
-   
-       
-        if (seleçãoCompraOuVenda == "+") {
+    let positiveValue = "[LUCRO]";
+    let negativeValue = "[PREJUIZO]";
+    let valueUndefined = "[SEM VALOR DEFINIDO]";
+
+    let createPositiveOrNegativeResult;
+    let positiveAndNegativeId = document.getElementById("positiveAndNegativeResultsId");
+    /* result > 0 ? document.getElementById('finalResult').insertAdjacentText("afterend", positiveValue): document.getElementById('finalResult').insertAdjacentText("afterend", negativeValue)
+    */
+    if (seleçãoCompraOuVenda == "+") {
 
 
-             result = result + parseInt(valueArrayLastNumber);
-
-            /* console.log(total) */
-        } if (seleçãoCompraOuVenda == "-") {
-            /*  console.log('valor subtraido', seleçãoCompraOuVenda) */
-            /*  console.log(subtraçãoDeValores) */
-            result = result - parseInt(valueArrayLastNumber);
-
-        }
-        console.log("result", result);
-
-        /*   console.log("result", resultNegative);
-          console.log("valor final",totalResulValue) */
-        /*   console.log(total) */
+        result = result + parseInt(valueArrayLastNumber);
+        document.getElementById('finalResult').innerHTML = result;
+        /* console.log(total) */
     }
+    if (seleçãoCompraOuVenda == "-") {
+        /*  console.log('valor subtraido', seleçãoCompraOuVenda) */
+        /*  console.log(subtraçãoDeValores) */
+        result = result - parseInt(valueArrayLastNumber);
+        document.getElementById('finalResult').innerHTML = result;
+    }
+    if (!positiveAndNegativeId) {
+        createPositiveOrNegativeResult = document.createElement('p');
+        document.getElementById('tableRowTotalStyle').appendChild(createPositiveOrNegativeResult);
+        createPositiveOrNegativeResult.className = "positiveAndNegativeResults";
+        document.getElementsByClassName("positiveAndNegativeResults")[0].setAttribute("id", "positiveAndNegativeResultsId");
+            /* acima criei uma condição que serve pra criar um elemento html, porem esse elemento
+            so vai ser criado uma vez, independente de quantas vezes a função rodar (ele so vai ser criado
+            uma vez porque depois que ele for criado ele vai ter um id, e quando nosso id estiver
+            criado nosso if vai detect-lo, dessa forma ele nao vai mais criar o elemento... caso
+            isso nao fosse feito, toda vez que a função rodasse o elemento html seria criado novamente.*/
+    }
+    if (result == 0) {
+        document.getElementById('positiveAndNegativeResultsId').innerHTML = valueUndefined;
+    }
+    if (result > 0) {
+        document.getElementById('positiveAndNegativeResultsId').innerHTML = positiveValue;
+    }
+    if (result < 0) {
+        document.getElementById('positiveAndNegativeResultsId').innerHTML = negativeValue;
+    }
+    console.log("result", result);
 
-/* }; */
+    /*   console.log("result", resultNegative);
+      console.log("valor final",totalResulValue) */
+    /*   console.log(total) */
+    /* } */
 
+};
 

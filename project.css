@@ -190,15 +190,38 @@ body{
  
    
 }
+
+#total{
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+#tableRowTotalStyle{
+    width: 90%;
+    text-align: end;
+    font-size: 14px;
+}
+#positiveAndNegativeResultsId{
+    font-size: 10px;
+}
 td{
   
     word-break: break-all;
     padding: 5px;
+    font-size: 14px;
 }
 th{
     padding-left: 25px;
     padding-right: 15px;
+    font-weight: 700;
+    font-size: 14px;
 }
+
 .tdCreateOneStyle{
     
   /*   background-color: gold; */
@@ -235,6 +258,9 @@ th{
     
     
 }
+#tableBodyStyle::-webkit-scrollbar {
+    width: 1px;
+  }
 
 
 
