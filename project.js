@@ -82,14 +82,14 @@ function myFormValues(e) {
 
     /* if (result) {
        return [resultRefresh.length -1]; */
-
+    let realSignal = "R$";
     if (!getingResultId) {
         finalResultCreate = document.createElement('p');
         /*  var totalValueCreat = finalResult.appendChild(document.createElement('p'));  */
         document.getElementById('tableRowTotalStyle').appendChild(finalResultCreate);
-        finalResultCreate.className = "finalResult";
-        finalResultIdCreate = document.getElementsByClassName("finalResult")[0].setAttribute("id", "finalResult");
-
+        finalResultCreate.className = "finalResultClass";
+        finalResultIdCreate = document.getElementsByClassName("finalResultClass")[0].setAttribute("id", "finalResult");
+        document.getElementById('finalResult').insertAdjacentText("afterbegin", realSignal)
         // }/* 
     }
 
@@ -118,7 +118,7 @@ function myFormValues(e) {
     //let valueArrayLastNumber = valueArray[valueArray.length - 1]; 
     let positiveValue = "[LUCRO]";
     let negativeValue = "[PREJUIZO]";
-    let valueUndefined = "[SEM VALOR DEFINIDO]";
+    let valueUndefined = "";
 
     let createPositiveOrNegativeResult;
     let positiveAndNegativeId = document.getElementById("positiveAndNegativeResultsId");
@@ -136,6 +136,7 @@ function myFormValues(e) {
         /*  console.log(subtraçãoDeValores) */
         result = result - parseInt(valueArrayLastNumber);
         document.getElementById('finalResult').innerHTML = result;
+       
     }
     if (!positiveAndNegativeId) {
         createPositiveOrNegativeResult = document.createElement('p');
@@ -148,14 +149,20 @@ function myFormValues(e) {
             criado nosso if vai detect-lo, dessa forma ele nao vai mais criar o elemento... caso
             isso nao fosse feito, toda vez que a função rodasse o elemento html seria criado novamente.*/
     }
+    /*  if(result){
+            document.getElementById("dynamicTotalStyle").remove();
+        } */
     if (result == 0) {
         document.getElementById('positiveAndNegativeResultsId').innerHTML = valueUndefined;
+        document.getElementById("dynamicTotalStyle").remove();
     }
     if (result > 0) {
         document.getElementById('positiveAndNegativeResultsId').innerHTML = positiveValue;
+        document.getElementById("dynamicTotalStyle").remove();
     }
     if (result < 0) {
         document.getElementById('positiveAndNegativeResultsId').innerHTML = negativeValue;
+        document.getElementById("dynamicTotalStyle").remove();
     }
     console.log("result", result);
 
