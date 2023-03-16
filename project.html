@@ -10,9 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="./project.js" defer ></script>
+    
 </head>
 
-<body>
+<body onload="loadScreenGetStorage()">
     <header id="headerWrapper">
         <div id="headerBox">
             <div id="headerMainDiv">
@@ -87,7 +88,7 @@
                             <td id="total"> 
                                 <p class="totalText">Total</p> 
                                 <p id="tableRowTotalStyle">
-                                    <p id="dynamicTotalStyle">[SEM VALOR DEFINIDO]</p>
+                                     <p id="dynamicTotalStyle">[SEM VALOR DEFINIDO]</p> 
                                 </p>
                             </td>  
                         </tr>
