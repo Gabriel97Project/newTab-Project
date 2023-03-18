@@ -41,10 +41,8 @@ if (dadosDoLocalStorageVazio != null) {
 } else {
     var m = [];
 }; */
-function deleteAllStorageData(){
-    localStorage.clear()
-}
 
+let createPositiveOrNegativeResult;
 
 function myFormValues(e) {
     e.preventDefault();
@@ -220,7 +218,7 @@ function myFormValues(e) {
         let negativeValue = "[PREJUIZO]";
         let valueUndefined = "";
      */
-    let createPositiveOrNegativeResult;
+   
     let positiveAndNegativeId = document.getElementById("positiveAndNegativeResultsId");
     /* result > 0 ? document.getElementById('finalResult').insertAdjacentText("afterend", positiveValue): document.getElementById('finalResult').insertAdjacentText("afterend", negativeValue)
     */
@@ -250,7 +248,7 @@ function myFormValues(e) {
     }
     if (!positiveAndNegativeId) {
         createPositiveOrNegativeResult = document.createElement('p');
-        document.getElementById('tableRowTotalStyle').appendChild(createPositiveOrNegativeResult);
+        document.getElementById('tableRowTotalResultStyle').appendChild(createPositiveOrNegativeResult);
         createPositiveOrNegativeResult.setAttribute("id", "positiveAndNegativeResultsId");
         /* acima criei uma condição que serve pra criar um elemento html, porem esse elemento
         so vai ser criado uma vez, independente de quantas vezes a função rodar (ele so vai ser criado
@@ -281,7 +279,7 @@ function myFormValues(e) {
       console.log("valor final",totalResulValue) */
     /*   console.log(total) */
     /* } */
-
+   /*  document.getElementById('dynamicTotalStyle').innerHTML = `R$ ${result}`; */
 };
 /* if (localStorage) {
     // LocalStorage is supported!
@@ -291,7 +289,7 @@ function myFormValues(e) {
     console.log(" nao tem local storage")
   }
  */
-let loadGetStorage = document.getElementById('tableBodyStyle')
+/* let loadGetStorage = document.getElementById('tableBodyStyle')
 
 function loadScreenGetStorage() {
     myInputValues.map((inputValuesUnit) => {
@@ -310,12 +308,12 @@ function loadScreenGetStorage() {
         createTableStorageLoadTwo.innerHTML = inputValuesUnit.nomeDaMercadoria;
         createTableStorageLoadThree.innerHTML = inputValuesUnit.valorDaMercadoria;
         console.log(inputValuesUnit.valorDaMercadoria, "inpuuuuuuts")
-    })
+    }) */
     /*  let positiveValue = "[LUCRO]";
      let negativeValue = "[PREJUIZO]";
      let valueUndefined = ""; */
 
-    document.getElementById('dynamicTotalStyle').innerHTML = `R$ ${result}`;
+   /*  document.getElementById('dynamicTotalStyle').innerHTML = `R$ ${result}`; */
     /* 
         let positiveAndNegativeId = document.getElementById("positiveAndNegativeResultsId");
         if (!positiveAndNegativeId) {
@@ -347,5 +345,5 @@ function loadScreenGetStorage() {
           }
       */
 
-}
+//}
 

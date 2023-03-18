@@ -1,4 +1,7 @@
+
+
 function loadScreenGetStorage() {
+    let loadGetStorage = document.getElementById('tableBodyStyle');
     myInputValues.map((inputValuesUnit) => {
         var trCreate = document.createElement('tr');
         trCreate.className = 'trCreateDinamicStyle'
@@ -52,4 +55,7 @@ function loadScreenGetStorage() {
       }
   */
 
+}
+function deleteAllStorageData(){
+    localStorage.clear()
 }
