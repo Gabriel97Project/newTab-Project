@@ -142,7 +142,6 @@ body{
 
 .submitCampStyle{
     background-color: #333333; 
-    
     border-radius: 3px;
     color: white;
     height: 100%;
@@ -158,9 +157,6 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
-  /*  background-color: yellow;   */
-
 }
 
 .extractTansitionTitleStyle{
@@ -171,7 +167,6 @@ body{
 #extractTransitionTableStyle{
     width: 98%;
     height: 100%;
-    /* background-color: blueviolet; */
 }
 
 #tableRowStyle{
@@ -180,52 +175,38 @@ body{
     width: 100%;
     border-bottom: solid 1px; 
     border-color: gray; 
-
-   /* background-color: blue;  */
-
 }
 .trCreateDinamicStyle{
     border-bottom: solid 1px; 
     width: 100%;
     border-color: gray;
-/*     background-color: aqua; */  
- 
-   
 }
 
 #total{
     width: 100%;
-   /*  background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     font-size: 14px;
     font-weight: 700;
-/*     background-color: yellow; */
 }
 .totalText{
     width: 80px;
-    /* background-color: blue; */
     text-align: center;
 }
 #tableRowTotalResultStyle{
     width: 90%;
- /*    background-color: aqua; */
     display: flex;
     flex-direction: column;
     text-align: end;
     font-size: 14px;
-   /*  background-color: darkviolet; */
-   
 }
 #positiveAndNegativeResultsId{
     font-size: 10px;
-/*     background-color: coral; */
     margin: 0px;
 }
 #dynamicTotalStyle{
-    /* background-color: blue; */
     font-size: 15px;
     margin: 0px;
     display: flex;
@@ -233,8 +214,6 @@ body{
     text-align: end;
 }
 #finalResult{
-   /* 
-    background-color: yellow; */
     margin: 0px;
 }
 td{
@@ -252,24 +231,13 @@ th{
 }
 
 .tdCreateOneStyle{
-    
-  /*   background-color: gold; */
-
     text-align: center;
-
- 
-   
 }
 .tdCreateTwoStyle{
     width: 70%;
-  /*   background-color: rgb(255, 162, 0); 
-     */
-    
-   
 }
 .tdCreateThreeStyle{
     width: 100%;
-    /* background-color: crimson;  */
     text-align: end;
     padding-right: 10px;
     
@@ -282,10 +250,7 @@ th{
     overflow-y: auto;
     align-items: center;
     width: 100%;
-    height: 200px;
- /*    background-color: chartreuse;  */
-    
-    
+    height: 200px; 
 }
 #tableBodyStyle::-webkit-scrollbar {
     width: 1px;
@@ -648,7 +613,6 @@ th{
         height: 280px;
         border-top: solid 1px;
         border-color: gray;
-        /* margin-top: 5%; */
         justify-content: flex-end;
     }
     #extractTransitionTableStyle{
