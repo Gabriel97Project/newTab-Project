@@ -647,6 +647,7 @@ th{
     .extractTransitionDivStyle{
         height: 280px;
         border-top: solid 1px;
+        border-color: gray;
         /* margin-top: 5%; */
         justify-content: flex-end;
     }
