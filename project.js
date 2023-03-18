@@ -41,6 +41,9 @@ if (dadosDoLocalStorageVazio != null) {
 } else {
     var m = [];
 }; */
+function deleteAllStorageData(){
+    localStorage.clear()
+}
 
 
 function myFormValues(e) {
@@ -50,10 +53,40 @@ function myFormValues(e) {
            seleçãoCompraOuVenda: seleçãoCompraOuVenda.value,
            nomeDaMercadoria: nomeDaMercadoria.value,
            valorDaMercadoria: valorDaMercadoria.value
-  
+    
        }];
        console.log(dadosDoUsuario); */
+    /*     for (elementIndex in e.target.elements["inputMerchandiseValueStyle"].value) {
+            if ("0123456789".indexOf(e.target.elements["inputMerchandiseValueStyle"].value[elementIndex]) == -1) {
+                console.log("peguei o erro")
+                alert("Somente números são aceitos no campo de valor!")
+                return false */
+    //aqui temos uma forma de validação de inputs usando o loop for dentro de todo o value digitado no input
+    //dentro do loop criamos uma condição para saber se no index do nosso input vamos ter algo diferente de um
+    //numero, se tiver, sera retornado um alert e o return false que vai inpedir nossa função de prosseguir
+    // dessa forma, nada sera execultado e o usuario tera q preencher novamente
+    /*      }
+     } */
+    let numbersVerify = /[^0-9]+/g
+    let stringsVerify = /[^a-zA-Z]+/g
+    //acima temos uma expressao regular que vai verificar se tem numeros. o sinal ^ serve como negação
+    // ou seja, se nao tiver numeros ou tiver qualquer coisa diferente de numeros, ele vai ativar nosso return false
 
+    if (stringsVerify.test(e.target.elements["inputMerchandiseNameStyle"].value)) {
+        console.log("peguei o erro string")
+        alert("Somente letras são aceitas no campo de mercadoria!")
+        return false
+    }
+    if (numbersVerify.test(e.target.elements["inputMerchandiseValueStyle"].value)) {
+        console.log("peguei o erro")
+        alert("Somente números são aceitos no campo de valor!")
+        return false
+    }
+    /*  if(e.target.elements["inputMerchandiseValueStyle"].value.match(/[a-zA-Z]/g).length > 0){
+         console.log("peguei o erro")
+         alert("Somente números são aceitos no campo de valor!")
+         return false
+     } */
     /* prevent default é uma função padrao que pode ser passada para um event
     que previne que a ação prossiga, ou seja, por exemplo, impede que nosso 
     formulario termine de realizar um submit */
@@ -125,24 +158,40 @@ function myFormValues(e) {
 
     // document.getElementById('tableRowTotalStyle').appendChild(finalResultCreate);
     // finalResultCreate.className = "finalResult";
-    let finalResultCreate; //variavel vazio vai ser preenchida qndo for criado o novo elemento
-    var getingResultId = document.getElementById('finalResult');
+    //variavel vazio vai ser preenchida qndo for criado o novo elemento
+
     // }/* 
 
     /* const currentResult = result */
 
     /* if (result) {
        return [resultRefresh.length -1]; */
-    let realSignal = "R$";
+    /*   let realSignal = "R$"; */
+
+
+
+
+
+    /* 
+      
+    
+    let finalResultCreate;
+       var getingResultId = document.getElementById('finalResult');
+    
     if (!getingResultId) {
-        finalResultCreate = document.createElement('p');
-        /*  var totalValueCreat = finalResult.appendChild(document.createElement('p'));  */
-        document.getElementById('tableRowTotalStyle').appendChild(finalResultCreate);
-        finalResultCreate.className = "finalResultClass";
-        finalResultIdCreate = document.getElementsByClassName("finalResultClass")[0].setAttribute("id", "finalResult");
-        document.getElementById('finalResult').insertAdjacentText("afterbegin", realSignal)
-        // }/* 
-    }
+            finalResultCreate = document.createElement('p');
+          
+            document.getElementById('dynamicTotalStyle').appendChild(finalResultCreate);
+            finalResultCreate.className = "finalResultClass";
+            finalResultIdCreate = document.getElementsByClassName("finalResultClass")[0].setAttribute("id", "finalResult");
+      
+        } */
+
+
+
+
+
+
 
     let valueArrayLastNumber = valueArray[valueArray.length - 1];
     /* if(valueArrayLastNumber.length < 0){
@@ -167,10 +216,10 @@ function myFormValues(e) {
 
     /*  for (let i = 0; i < valueArray.length; i++) { */
     //let valueArrayLastNumber = valueArray[valueArray.length - 1]; 
-    let positiveValue = "[LUCRO]";
-    let negativeValue = "[PREJUIZO]";
-    let valueUndefined = "";
-
+    /*     let positiveValue = "[LUCRO]";
+        let negativeValue = "[PREJUIZO]";
+        let valueUndefined = "";
+     */
     let createPositiveOrNegativeResult;
     let positiveAndNegativeId = document.getElementById("positiveAndNegativeResultsId");
     /* result > 0 ? document.getElementById('finalResult').insertAdjacentText("afterend", positiveValue): document.getElementById('finalResult').insertAdjacentText("afterend", negativeValue)
@@ -182,7 +231,7 @@ function myFormValues(e) {
 
 
         result = result + parseInt(valueArrayLastNumber);
-        document.getElementById('finalResult').innerHTML = result;
+        document.getElementById('dynamicTotalStyle').innerHTML = `R$ ${result}`;
         /* console.log(total) */
         localStorage.setItem('resultados', (result));
     }
@@ -195,15 +244,14 @@ function myFormValues(e) {
         /*   var locais = localStorage.getItem("resultados");
           console.log(locais);
           var parseLocais = localStorage.parse(locais) */
-        document.getElementById('finalResult').innerHTML = result;
+        document.getElementById('dynamicTotalStyle').innerHTML = `R$ ${result}`;
         localStorage.setItem('resultados', (result));
 
     }
     if (!positiveAndNegativeId) {
         createPositiveOrNegativeResult = document.createElement('p');
         document.getElementById('tableRowTotalStyle').appendChild(createPositiveOrNegativeResult);
-        createPositiveOrNegativeResult.className = "positiveAndNegativeResults";
-        document.getElementsByClassName("positiveAndNegativeResults")[0].setAttribute("id", "positiveAndNegativeResultsId");
+        createPositiveOrNegativeResult.setAttribute("id", "positiveAndNegativeResultsId");
         /* acima criei uma condição que serve pra criar um elemento html, porem esse elemento
         so vai ser criado uma vez, independente de quantas vezes a função rodar (ele so vai ser criado
         uma vez porque depois que ele for criado ele vai ter um id, e quando nosso id estiver
@@ -213,18 +261,18 @@ function myFormValues(e) {
     /*  if(result){
             document.getElementById("dynamicTotalStyle").remove();
         } */
-    let deleteElementText = document.getElementById("dynamicTotalStyle");
-    { deleteElementText ? document.getElementById("dynamicTotalStyle").remove() : console.log("deletado") }
+    /*  let deleteElementText = document.getElementById("dynamicTotalStyle"); */
+    /*   { deleteElementText ? document.getElementById("dynamicTotalStyle").remove() : console.log("deletado") } */
     if (result == 0) {
-        document.getElementById('positiveAndNegativeResultsId').innerHTML = valueUndefined;
+        document.getElementById('positiveAndNegativeResultsId').innerHTML = "";
 
     }
     if (result > 0) {
-        document.getElementById('positiveAndNegativeResultsId').innerHTML = positiveValue;
+        document.getElementById('positiveAndNegativeResultsId').innerHTML = "[LUCRO]";
 
     }
     if (result < 0) {
-        document.getElementById('positiveAndNegativeResultsId').innerHTML = negativeValue;
+        document.getElementById('positiveAndNegativeResultsId').innerHTML = "[PREJUIZO]";
 
     }
     console.log("result", result);
@@ -246,24 +294,58 @@ function myFormValues(e) {
 let loadGetStorage = document.getElementById('tableBodyStyle')
 
 function loadScreenGetStorage() {
-    myInputValues.map((inputValuesUnit)=>{
+    myInputValues.map((inputValuesUnit) => {
         var trCreate = document.createElement('tr');
         trCreate.className = 'trCreateDinamicStyle'
         let createTableStorageLoadOne = trCreate.appendChild(document.createElement('td'))
-        createTableStorageLoadOne.className = "tdCreateOneStyle" 
-        let createTableStorageLoadTwo = trCreate.appendChild(document.createElement('td')) 
-        createTableStorageLoadTwo.className = "tdCreateTwoStyle" 
-        let createTableStorageLoadThree = trCreate.appendChild(document.createElement('td'))    
-        createTableStorageLoadThree.className = "tdCreateThreeStyle"  
+        createTableStorageLoadOne.className = "tdCreateOneStyle"
+        let createTableStorageLoadTwo = trCreate.appendChild(document.createElement('td'))
+        createTableStorageLoadTwo.className = "tdCreateTwoStyle"
+        let createTableStorageLoadThree = trCreate.appendChild(document.createElement('td'))
+        createTableStorageLoadThree.className = "tdCreateThreeStyle"
 
 
         loadGetStorage.appendChild(trCreate)
         createTableStorageLoadOne.innerHTML = inputValuesUnit.seleção;
         createTableStorageLoadTwo.innerHTML = inputValuesUnit.nomeDaMercadoria;
         createTableStorageLoadThree.innerHTML = inputValuesUnit.valorDaMercadoria;
-        console.log(inputValuesUnit.valorDaMercadoria,"inpuuuuuuts")
+        console.log(inputValuesUnit.valorDaMercadoria, "inpuuuuuuts")
     })
-}
+    /*  let positiveValue = "[LUCRO]";
+     let negativeValue = "[PREJUIZO]";
+     let valueUndefined = ""; */
 
-  
+    document.getElementById('dynamicTotalStyle').innerHTML = `R$ ${result}`;
+    /* 
+        let positiveAndNegativeId = document.getElementById("positiveAndNegativeResultsId");
+        if (!positiveAndNegativeId) {
+            let = createPositiveOrNegativeResult = document.createElement('p');
+            document.getElementById('dynamicTotalStyle').appendChild(createPositiveOrNegativeResult);
+            createPositiveOrNegativeResult.setAttribute("id", "positiveAndNegativeResultsId");
+    
+        } 
+        
+       if (result == 0) {
+            document.getElementById('positiveAndNegativeResultsId').innerHTML = valueUndefined;
+    
+        }
+        if (result > 0) {
+            document.getElementById('positiveAndNegativeResultsId').innerHTML = positiveValue;
+    
+        }
+        if (result < 0) {
+            document.getElementById('positiveAndNegativeResultsId').innerHTML = negativeValue;
+    
+        } 
+    
+        /*   if (result > 0) {
+              document.getElementById('positiveAndNegativeResultsId').innerHTML = positiveValue;
+      
+          }
+          if(result < 0){
+              document.getElementById('positiveAndNegativeResultsId').innerHTML = negativeValue;
+          }
+      */
+
+}
 

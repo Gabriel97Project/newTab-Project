@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="./project.js" defer ></script>
+    <script src="./projectGetStorageData.js"></script>
     
 </head>
 
@@ -36,7 +37,7 @@
                             </li>
                             <p class="linkBar">|</p>
                             <li>
-                                <a class="linkStyle" href="">Limpar dados</a>
+                                <a class="linkStyle" href="" onclick="deleteAllStorageData()">Limpar dados</a>
                             </li>
                         </ul>
                     </nav>
@@ -71,7 +72,7 @@
                         </div>
                     </div>
                     <div id="inputSubmitStyle">
-                        <button class="submitCampStyle" type="submit">Enviar valor</button>
+                        <button class="submitCampStyle" type="submit" >Enviar valor</button>
                     </div>
                 </form>
             </div>
@@ -87,9 +88,9 @@
                         <tr class="tableRowTotalStyle">
                             <td id="total"> 
                                 <p class="totalText">Total</p> 
-                                <p id="tableRowTotalStyle">
+                                <div id="tableRowTotalResultStyle">
                                      <p id="dynamicTotalStyle">[SEM VALOR DEFINIDO]</p> 
-                                </p>
+                                </div>
                             </td>  
                         </tr>
                     </tr>
