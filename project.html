@@ -12,6 +12,7 @@
     <script src="./project.js" defer ></script>
     <script src="./projectGetStorageData.js"></script>
     
+    
 </head>
 
 <body onload="loadScreenGetStorage()">
@@ -37,7 +38,7 @@
                             </li>
                             <p class="linkBar">|</p>
                             <li>
-                                <a class="linkStyle" href="" onclick="deleteAllStorageData()">Limpar dados</a>
+                                <a class="linkStyle" href="javascript:void(0)" onclick="deleteAllStorageData()">Limpar dados</a>
                             </li>
                         </ul>
                     </nav>
@@ -66,7 +67,7 @@
                         </div>
                         <div class="labelAndInputBoxStyle">
                             <label for="inputMerchandiseValueStyle">Valor</label>
-                            <input id="inputMerchandiseValueStyle" required type="text" id="merchandiseValue" name="merchandiseValue" placeholder="R$ 0,00">
+                            <input id="inputMerchandiseValueStyle" required type="text" id="merchandiseValue" name="merchandiseValue" placeholder="R$ 0,00" onkeydown="valueInputRestrict(event)" onkeyup="valueMask(event)">
                         </div>
                     </div>
                     <div id="inputSubmitStyle">
@@ -81,8 +82,9 @@
                         <th>Mercadoria</th>
                         <th>Valor</th>
                         <tbody id="tableBodyStyle" >
-                            
+                           <td id="tdNullText" style="padding-top: 80px;">ooooooooooooi</td>
                         </tbody>
+                        
                         <tr class="tableRowTotalStyle">
                             <td id="total"> 
                                 <p class="totalText">Total</p> 

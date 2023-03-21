@@ -243,6 +243,10 @@ th{
     
    
 }
+.tdClearStorage{
+    text-align: center;
+    padding-top: 80px;
+}
 
 #tableBodyStyle{
     display: flex;
