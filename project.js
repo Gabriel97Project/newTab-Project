@@ -15,8 +15,8 @@ function valueInputRestrict(eventoDown) {
     ) {
         eventoDown.preventDefault();
     }
-console.log(eventoDown)
-    /*  console.log(eventoDown) */
+    console.log(eventoDown)
+
 }
 
 
@@ -26,17 +26,11 @@ function valueMask(eventoUp) {
         currency: "BRL",
 
     });
-
     let valueMask = eventoUp.target.value;
-
     valueMask = valueMask.replaceAll('.', '').replace(',', '').replaceAll('R$', '');
-
     valueMask = valueMask.replace(/([0-9]{2})$/gi, '.$1');
-
     valueMask = parseFloat(valueMask);
-
     eventoUp.target.value = formatter.format(valueMask).replaceAll('R$', '');
-    console.log(valueMask, "babababab")
 }
 
 const formatter = new Intl.NumberFormat('pt-BR', {
@@ -45,25 +39,8 @@ const formatter = new Intl.NumberFormat('pt-BR', {
 
 });
 
-let formatedResult = formatter.format(result);
-
-
-
 function myFormValues(e) {
     e.preventDefault();
-    /* let numbersVerify = /[^0-9]+/g */
-    /*   let stringsVerify = /[^a-zA-Z]+/g */
-    /*   if (stringsVerify.test(e.target.elements["inputMerchandiseNameStyle"].value)) {
-          console.log("peguei o erro string")
-          alert("Somente letras são aceitas no campo de mercadoria!")
-          return false
-      } */
-    /*  if (numbersVerify.test(e.target.elements["inputMerchandiseValueStyle"].value)) {
-         console.log("peguei o erro")
-         alert("Somente números são aceitos no campo de valor!")
-         return false
-     } */
-
     let selecaoCompraOuVenda = document.getElementById('selectCampStyle').value;
     let nomeDaMercadoria = document.getElementById('inputMerchandiseNameStyle').value;
     let valorDaMercadoria = document.getElementById('inputMerchandiseValueStyle').value;
@@ -86,8 +63,6 @@ function myFormValues(e) {
     tdCreateTwo.innerHTML = nomeDaMercadoria;
     tdCreateThree.innerHTML = `R$ ${valorDaMercadoria}`;
     document.getElementById('tableBodyStyle').appendChild(trCreate);
-
-
 
     let valueArrayLastNumber = valueArray[valueArray.length - 1];
     if (selecaoCompraOuVenda == "+") {
