@@ -7,7 +7,7 @@ function loadScreenGetStorage() {
         trCreate.innerHTML = `
             <td class = "tdCreateOneStyle">${inputValuesUnit.selecaoCompraOuVenda}</td>
             <td class = "tdCreateTwoStyle">${inputValuesUnit.nomeDaMercadoria}</td>
-            <td class= "tdCreateThreeStyle">${inputValuesUnit.valorDaMercadoria}</td>
+            <td class= "tdCreateThreeStyle"> R$ ${inputValuesUnit.valorDaMercadoria}</td>
         ` 
         loadGetStorage.appendChild(trCreate)
         
@@ -24,12 +24,13 @@ function loadScreenGetStorage() {
         createTableStorageLoadTwo.innerHTML = 
         createTableStorageLoadThree.innerHTML =
         console.log(inputValuesUnit.valorDaMercadoria, "inpuuuuuuts") */
+        
+    document.getElementById('dynamicTotalStyle').innerHTML = formatter.format(result);
     })
    /*  let positiveValue = "[LUCRO]";
     let negativeValue = "[PREJUIZO]";
     let valueUndefined = ""; */
 
-    document.getElementById('dynamicTotalStyle').innerHTML = formatter.format(result);
 
     let positiveAndNegativeId = document.getElementById("positiveAndNegativeResultsId");
     if (!positiveAndNegativeId) {
@@ -52,9 +53,16 @@ function loadScreenGetStorage() {
         document.getElementById('positiveAndNegativeResultsId').innerHTML = "[PREJUÍZO]";
 
     } 
+    let clearText = document.getElementById('clearStorageTextStyle')
+    let tableBodyId = document.getElementById('tableBodyStyle')
+    {result ? clearText.remove():tableBodyId.innerHTML =`<tr id = 'clearStorageTextStyle'> <td>ADICIONE ALGUMA TRANSAÇÃO</td> </tr>`}
 
 
 }
 function deleteAllStorageData(){
-    localStorage.clear()
+    localStorage.clear();
+    let tableBodyId = document.getElementById('tableBodyStyle')
+    tableBodyId.innerHTML =`<tr id = 'clearStorageTextStyle'> <td>ADICIONE ALGUMA TRANSAÇÃO</td> </tr>`
+    document.getElementById('dynamicTotalStyle').innerHTML = "NENHUM VALOR";
+    document.getElementById('positiveAndNegativeResultsId').innerHTML = "";
 }

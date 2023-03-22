@@ -15,32 +15,39 @@ function valueInputRestrict(eventoDown) {
     ) {
         eventoDown.preventDefault();
     }
-
+console.log(eventoDown)
     /*  console.log(eventoDown) */
 }
+
+
 function valueMask(eventoUp) {
-    console.log(eventoUp);
+    const formatter = new Intl.NumberFormat('pt-BR', {
+        style: "currency",
+        currency: "BRL",
+
+    });
+
     let valueMask = eventoUp.target.value;
 
     valueMask = valueMask.replaceAll('.', '').replace(',', '').replaceAll('R$', '');
 
     valueMask = valueMask.replace(/([0-9]{2})$/gi, '.$1');
-  
+
     valueMask = parseFloat(valueMask);
 
-    eventoUp.target.value = valueMask.toLocaleString('pt-BR');
+    eventoUp.target.value = formatter.format(valueMask).replaceAll('R$', '');
     console.log(valueMask, "babababab")
 }
 
+const formatter = new Intl.NumberFormat('pt-BR', {
+    style: "currency",
+    currency: "BRL",
 
+});
 
-    const formatter = new Intl.NumberFormat('pt-BR',{
-        style: "currency",
-        currency: "BRL",
-        
-    });
-    
 let formatedResult = formatter.format(result);
+
+
 
 function myFormValues(e) {
     e.preventDefault();
@@ -80,15 +87,17 @@ function myFormValues(e) {
     tdCreateThree.innerHTML = `R$ ${valorDaMercadoria}`;
     document.getElementById('tableBodyStyle').appendChild(trCreate);
 
+
+
     let valueArrayLastNumber = valueArray[valueArray.length - 1];
     if (selecaoCompraOuVenda == "+") {
         result = result + parseFloat(valueArrayLastNumber.replaceAll('.', '').replace(',', '.'));
-       
+
         localStorage.setItem('resultados', (result));
     };
     if (selecaoCompraOuVenda == "-") {
         result = result - parseFloat(valueArrayLastNumber.replaceAll('.', '').replace(',', '.'));
-       
+
         localStorage.setItem('resultados', (result));
     };
     document.getElementById('dynamicTotalStyle').innerHTML = formatter.format(result);
@@ -113,4 +122,7 @@ function myFormValues(e) {
     if (result < 0) {
         document.getElementById('positiveAndNegativeResultsId').innerHTML = "[PREJUIZO]";
     };
+    let clearText = document.getElementById('clearStorageTextStyle')
+    let tableBodyId = document.getElementById('tableBodyStyle')
+    { result ? clearText.remove() : tableBodyId.innerHTML = `<tr id = 'clearStorageTextStyle'> <td>ADICIONE ALGUMA TRANSAÇÃO</td> </tr>` }
 };

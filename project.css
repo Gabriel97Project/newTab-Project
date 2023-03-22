@@ -273,7 +273,9 @@ th{
     padding-right: 10px;
    
 }
-
+#clearStorageTextStyle {
+    padding-top: 80px;
+}
 .mainDivResponsiveStyle{
     position: relative;
     display: flex;
